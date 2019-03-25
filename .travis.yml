@@ -2,8 +2,23 @@ language: node_js
 node_js:
   - '8'
 addons:
-  chrome: stable
-script: npm run lint && npm test
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+cache:
+  directories:
+     - ./node_modules
+ 
+install:
+  - npm install
+ 
+script:
+  - npm run lint
+  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+  
 before_deploy: npm run build
 deploy:
   provider: npm
