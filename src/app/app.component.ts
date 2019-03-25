@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+import { version as systemVersion } from '../../package.json'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'workflow-for-angular';
+  constructor(
+    el: ElementRef,
+    renderer: Renderer2,
+  ) {
+    renderer.setAttribute(el.nativeElement, 'system-version', systemVersion)
+  }
 }
