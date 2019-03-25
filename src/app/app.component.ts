@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
-import { version as systemVersion } from '../../package.json'
+import { version as systemVersion } from '../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,6 @@ export class AppComponent {
     el: ElementRef,
     renderer: Renderer2,
   ) {
-    renderer.setAttribute(el.nativeElement, 'system-version', systemVersion)
-    console.info('systemVersion', systemVersion)
+    renderer.setAttribute(el.nativeElement, 'system-version', systemVersion);
   }
 }
