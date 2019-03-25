@@ -13,5 +13,6 @@ export class AppComponent {
     renderer: Renderer2,
   ) {
     renderer.setAttribute(el.nativeElement, 'system-version', systemVersion)
+    console.info('systemVersion', systemVersion)
   }
 }
