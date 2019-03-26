@@ -8,6 +8,6 @@
 
 目前还在验证中
 
-add 1
+结论如下：
 
-add 2
+feature分支合并到开发基准分支，例如`develop`，提PR，并且使用squash merge策略，开发基准分支合并到发布分支，例如`master`，则在本地rebase完开发基准分支，再push到远程。
