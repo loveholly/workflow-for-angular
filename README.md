@@ -7,5 +7,3 @@
 经测试发现PR的时候采用squash merge的方式会产生奇怪的行为，最终可能导致conflict的出现
 
 目前还在验证中
-
-add 1
